@@ -7,23 +7,23 @@ class MenuItem {
   final IconData icon;
 
   const MenuItem({
-    required this.title, 
-    required this.subTitle, 
-    required this.link, 
-    required this.icon});
+    required this.title,
+    required this.subTitle,
+    required this.link,
+    required this.icon
+  });
 }
 
-const appMenuItems = <MenuItem> [
+
+const appMenuItems = <MenuItem>[
   MenuItem(
-    title: 'Botones',
-    subTitle: 'Varios botones en Flutter',
-    link: '/buttons',
-    icon: Icons.smart_button_rounded
-  ),
+  title: 'Botones',
+  subTitle: 'Varios botones en Flutter',
+  link: '/buttons',
+  icon: Icons.smart_button_outlined),
   MenuItem(
-    title: 'Botones',
-    subTitle: 'Varios botones en Flutter',
-    link: '/buttons',
-    icon: Icons.smart_button_outlined
-  )
+  title: 'Tarjetas',
+  subTitle: 'Un conjunto',
+  link: '/cards',
+  icon: Icons.card_travel),
 ];

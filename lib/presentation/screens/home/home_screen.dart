@@ -1,5 +1,6 @@
-import 'package:cucp_widget_app/config/menu/menu_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:cucp_widget_app/config/menu/menu_item.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,29 +25,33 @@ class _HomeView extends StatelessWidget {
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
         final menuItem = appMenuItems[index];
-
         return _CustomTile(menuItem: menuItem);
       },
     );
   }
 }
 
-class _CustomTile extends StatelessWidget {
-  final MenuItem menuItem;
 
-  const _CustomTile({required this.menuItem});
+class _CustomTile extends StatelessWidget {
+  
+  final MenuItem menuItem;
+  
+  const _CustomTile({
+    required this.menuItem
+  });
+
 
   @override
   Widget build(BuildContext context) {
+  final color = Theme.of(context).colorScheme;
 
-    final color = Theme.of(context).colorScheme;
     return ListTile(
-      leading: Icon(menuItem.icon),
+      leading: Icon(menuItem.icon, color: color.primary),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
-      trailing: Icon(Icons.arrow_forward_ios_outlined, color: color.primary,),
+      trailing: Icon(Icons.arrow_forward_ios_outlined, color: color.primary),
       onTap: () {
-        // TODO: Navegar a otra pantalla
+        context.push(menuItem.link);
       },
     );
   }
