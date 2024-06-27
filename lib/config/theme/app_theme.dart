@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 const colorList = <Color>[
-  Colors.black,
-  Colors.green
+  Color.fromARGB(255, 0, 217, 255),
+  Color.fromARGB(255, 59, 24, 255)
 ];
 
 class AppTheme {
